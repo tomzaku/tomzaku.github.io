@@ -335,20 +335,6 @@ code {
 #main .main-body-content:after {
   clear: both;
 }
-@media screen and (max-width: 480px) {
-  .logo {
-    display: block;
-    padding: 10px 0;
-    background-image: url("http://sv1.upsieutoc.com/2016/11/17/mediaMobilefba82.png");
-    -webkit-background-size: 200px 200px;
-    -moz-background-size: 200px 200px;
-    background-size: 200px 200px;
-    width: 200px;
-    height: 200px;
-    background-repeat: no-repeat;
-    position: relative;
-  }
-}
 #header {
   background-image: url("http://sv1.upsieutoc.com/2016/11/16/DSC_7900.jpg");
   -webkit-background-size: 100% 100%;
@@ -2005,6 +1991,15 @@ i.icon:before {
   }
   #header .logo-wrap .logo {
     margin: 0 auto;
+    display: block;
+    background-image: url("http://sv1.upsieutoc.com/2016/11/17/mediaMobilefba82.png");
+    -webkit-background-size: 200px 200px;
+    -moz-background-size: 200px 200px;
+    background-size: 200px 200px;
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    position: relative;
   }
   #header .subtitle-wrap {
     display: block;
@@ -2137,6 +2132,15 @@ i.icon:before {
   }
   #footer .logo {
     margin: 0 auto;
+    display: block;
+    background-image: url("http://sv1.upsieutoc.com/2016/11/17/mediaMobilefba82.png");
+    -webkit-background-size: 200px 200px;
+    -moz-background-size: 200px 200px;
+    background-size: 200px 200px;
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    position: relative;
   }
   #footer .credit {
     text-align: center;
