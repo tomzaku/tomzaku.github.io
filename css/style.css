@@ -343,6 +343,7 @@ code {
   background-position: 0px 0px;
   padding-bottom: 60px;
   position: relative;
+  background-repeat: no-repeat;
 }
 #header-outer {
   height: 100%;
