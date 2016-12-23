@@ -8,17 +8,23 @@
     
         <meta name="keywords" content="react native" />
     
-    <meta name="description" content="Just for learning F8app(by facebook)">
+    <meta name="description" content="Just for learning F8app(by facebook)
+
+Structure Directory├── setup.js├── F8App.js├── F8Navigator.js├── FacebookSDK.js├── PushNotificationsController.js├── actions├── common│      ├── BackButtonIcon.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Learning F8 App ReactNative by UML">
 <meta property="og:url" content="http://yoursite.com/2016/12/23/learning-f8-app-rn/index.html">
 <meta property="og:site_name" content="Tom's Blog">
-<meta property="og:description" content="Just for learning F8app(by facebook)">
+<meta property="og:description" content="Just for learning F8app(by facebook)
+
+Structure Directory├── setup.js├── F8App.js├── F8Navigator.js├── FacebookSDK.js├── PushNotificationsController.js├── actions├── common│      ├── BackButtonIcon.js">
 <meta property="og:image" content="http://yoursite.com/images/f8app_flow.png">
-<meta property="og:updated_time" content="2016-12-23T13:39:42.000Z">
+<meta property="og:updated_time" content="2016-12-23T16:02:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Learning F8 App ReactNative by UML">
-<meta name="twitter:description" content="Just for learning F8app(by facebook)">
+<meta name="twitter:description" content="Just for learning F8app(by facebook)
+
+Structure Directory├── setup.js├── F8App.js├── F8Navigator.js├── FacebookSDK.js├── PushNotificationsController.js├── actions├── common│      ├── BackButtonIcon.js">
 <meta name="twitter:image" content="http://yoursite.com/images/f8app_flow.png">
     
 
@@ -171,6 +177,42 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
             <p>Just for learning F8app(by facebook)</p>
 <p><img src="/images/f8app_flow.png" alt="Class Flow F8App"></p>
+<h2 id="Structure-Directory"><a href="#Structure-Directory" class="headerlink" title="Structure Directory"></a>Structure Directory</h2><p>├── setup.js<br>├── F8App.js<br>├── F8Navigator.js<br>├── FacebookSDK.js<br>├── PushNotificationsController.js<br>├── actions<br>├── common<br>│      ├── BackButtonIcon.js<br>│      ├── Carousel.js<br>│      ├── F8Button.js<br>│      ├── F8Colors.js<br>│      ├── F8DrawerLayout.js<br>│      ├── F8Header.js<br>│      ├── F8PageControl.js<br>│      ├── F8SegmentedControl.js<br>│      ├── F8StyleSheet.js<br>│      └── img<br>│          ├── back.android.png<br>├── filter<br>│      ├── FilterScreen.js<br>│      ├── FriendsList.js<br>│      ├── Header.js<br>├── flow-lib.js<br>├── login<br>├── rating<br>├── reducers<br>│      ├── config.js<br>│      ├── createParseReducer.js<br>│      ├── filter.js<br>│      ├── friendsSchedules.js<br>│      ├── index.js<br>│      ├── maps.js<br>│      └── user.js<br>├── setup.js<br>├── store<br>│      ├── analytics.js<br>│      ├── array.js<br>│      ├── configureStore.js<br>│      ├── promise.js<br>│      └── track.js<br>└── tabs<br>       ├── F8TabsView.android.js<br>       ├── F8TabsView.ios.js<br>       ├── MenuItem.js<br>       ├── info<br>       ├── maps<br>       ├── notifications<br>       └── schedule</p>
+<h2 id="Describe"><a href="#Describe" class="headerlink" title="Describe"></a>Describe</h2><p>  F8 app is created by Facebook. It’s a basic example for React-Native (use redux).<br>  You can check here: <a href="https://github.com/fbsamples/f8app/tree/master/js" target="_blank" rel="external">https://github.com/fbsamples/f8app/tree/master/js</a>.<br>  This post required some knowledge about redux,react.<br>  This is a life circle in React-Native. This is so important part in RN.<br>  <img src="/images/life_cycle_rn.png" alt="Life Cycle React Native"><br>  Each component in ReactNative will run above image.<br>  When state of a component change, the component will render again.</p>
+<h2 id="Detail"><a href="#Detail" class="headerlink" title="Detail"></a>Detail</h2><p>  First, F8App will call setup.js(./js/setup.js)</p>
+<h3 id="1-Setup-js"><a href="#1-Setup-js" class="headerlink" title="1. Setup.js"></a>1. Setup.js</h3><p>  Call <code>configureStore</code> from store directory(./store/configureStore) to apply <code>redux</code><br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;Provider store=&#123;this.state.store&#125;&gt;</div><div class="line">store: configureStore(() =&gt; this.setState(&#123;isLoading: false&#125;)),</div></pre></td></tr></table></figure></p>
+<p>  While it waiting loading redux,it show the white screen<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">    if (this.state.isLoading) &#123;</div><div class="line">  return null;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>  If loading finished, it will call F8App(./js/F8App)<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;Provider store=&#123;this.state.store&#125;&gt;</div><div class="line">  &lt;F8App /&gt;</div><div class="line">&lt;/Provider&gt;</div></pre></td></tr></table></figure></p>
+<h3 id="2-F8App-js"><a href="#2-F8App-js" class="headerlink" title="2. F8App.js"></a>2. F8App.js</h3><h5 id="componentDidMount"><a href="#componentDidMount" class="headerlink" title="componentDidMount"></a>componentDidMount</h5><ol>
+<li><p>Adding event checking App status (<code>foreground</code> in App ,<code>background</code> in another App or home Screen)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">AppState.addEventListener(&apos;change&apos;, this.handleAppStateChange);</div></pre></td></tr></table></figure>
+</li>
+<li><p>Load notification,map … (download from the internet). You can check code in redux</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// TODO: Make this list smaller, we basically download the whole internet</div><div class="line">this.props.dispatch(loadNotifications());</div><div class="line">this.props.dispatch(loadMaps());</div><div class="line">this.props.dispatch(loadConfig());</div><div class="line">this.props.dispatch(loadSessions());</div><div class="line">this.props.dispatch(loadFriendsSchedules());</div><div class="line">this.props.dispatch(loadSurveys());</div></pre></td></tr></table></figure>
+</li>
+<li><p>Sync/Update code from server to user(Update code without download from AppStore/CH Play)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CodePush.sync(&#123;installMode: CodePush.InstallMode.ON_NEXT_RESUME&#125;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="render"><a href="#render" class="headerlink" title="render"></a>render</h5><ol>
+<li><p>Check isLogined (use <code>redux-persist</code> in redux for save the data in local)<br>If it’s not Login =&gt; Push Login Screen<br>else =&gt; push Navigator</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">if (!this.props.isLoggedIn) &#123;</div><div class="line">    return &lt;LoginScreen /&gt;;</div><div class="line">  &#125;</div><div class="line">  return (</div><div class="line">    &lt;View style=&#123;styles.container&#125;&gt;</div><div class="line">      &lt;StatusBar</div><div class="line">        translucent=&#123;true&#125;</div><div class="line">        backgroundColor=&quot;rgba(0, 0, 0, 0.2)&quot;</div><div class="line">        barStyle=&quot;light-content&quot;</div><div class="line">       /&gt;</div><div class="line">      &lt;F8Navigator /&gt;</div><div class="line">      &lt;PushNotificationsController /&gt;</div><div class="line">    &lt;/View&gt;</div><div class="line">  );</div></pre></td></tr></table></figure>
+<p>Note: <code>StatusBar</code> =&gt; Work for Android.<br><code>PushNotificationsController</code> =&gt; Check and Push Notification is used <code>react-native-push-notification</code> library</p>
+</li>
+</ol>
+<h3 id="3-F8Navigator-js"><a href="#3-F8Navigator-js" class="headerlink" title="3. F8Navigator.js"></a>3. F8Navigator.js</h3><h5 id="componentDidMount-1"><a href="#componentDidMount-1" class="headerlink" title="componentDidMount"></a>componentDidMount</h5><ol>
+<li><p>Listening Press Back Button on Android. Use <code>BackAndroid</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">componentDidMount: function() &#123;</div><div class="line">  BackAndroid.addEventListener(&apos;hardwareBackPress&apos;, this.handleBackButton);</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+</li>
+<li><p>use <code>Navigator</code> to change screen.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;Navigator</div><div class="line">    ref=&quot;navigator&quot;</div><div class="line">    style=&#123;styles.container&#125;</div><div class="line">    configureScene=&#123;(route) =&gt; &#123;</div><div class="line">      if (Platform.OS === &apos;android&apos;) &#123;</div><div class="line">        return Navigator.SceneConfigs.FloatFromBottomAndroid;</div><div class="line">      &#125;</div><div class="line">      // TODO: Proper scene support</div><div class="line">      if (route.shareSettings || route.friend) &#123;</div><div class="line">        return Navigator.SceneConfigs.FloatFromRight;</div><div class="line">      &#125; else &#123;</div><div class="line">        return Navigator.SceneConfigs.FloatFromBottom;</div><div class="line">      &#125;</div><div class="line">    &#125;&#125;</div><div class="line">    initialRoute=&#123;&#123;&#125;&#125;</div><div class="line">    renderScene=&#123;this.renderScene&#125;</div><div class="line">  /&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Remove event Listen Back Button</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">componentWillUnmount: function() &#123;</div><div class="line">  BackAndroid.removeEventListener(&apos;hardwareBackPress&apos;, this.handleBackButton);</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
+<p>4.Note<br>Context in React is like Global Variable. So you have consider when use it.<br>It will take more memory and may be reduce performance.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">getChildContext() &#123;</div><div class="line">  return &#123;</div><div class="line">    addBackButtonListener: this.addBackButtonListener,</div><div class="line">    removeBackButtonListener: this.removeBackButtonListener,</div><div class="line">    &#125;;</div><div class="line">  &#125;,</div></pre></td></tr></table></figure>
+</li>
+</ol>
 
         </div>
         <footer class="article-footer">
