@@ -19,7 +19,7 @@ Describe  F8 app is created by Facebook. It’s a basic example for React-Native
 
 Describe  F8 app is created by Facebook. It’s a basic example for React-Native (use redux).  You can check here: https://github.com/fbsamples/f8app/tree/master/js">
 <meta property="og:image" content="http://yoursite.com/images/f8app_flow.png">
-<meta property="og:updated_time" content="2016-12-23T16:16:41.000Z">
+<meta property="og:updated_time" content="2016-12-23T16:48:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Learning F8 App ReactNative by UML">
 <meta name="twitter:description" content="Just for learning F8app(by facebook)
@@ -207,13 +207,20 @@ ga('send', 'pageview');
 </li>
 <li><p>use <code>Navigator</code> to change screen.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;Navigator</div><div class="line">    ref=&quot;navigator&quot;</div><div class="line">    style=&#123;styles.container&#125;</div><div class="line">    configureScene=&#123;(route) =&gt; &#123;</div><div class="line">      if (Platform.OS === &apos;android&apos;) &#123;</div><div class="line">        return Navigator.SceneConfigs.FloatFromBottomAndroid;</div><div class="line">      &#125;</div><div class="line">      // TODO: Proper scene support</div><div class="line">      if (route.shareSettings || route.friend) &#123;</div><div class="line">        return Navigator.SceneConfigs.FloatFromRight;</div><div class="line">      &#125; else &#123;</div><div class="line">        return Navigator.SceneConfigs.FloatFromBottom;</div><div class="line">      &#125;</div><div class="line">    &#125;&#125;</div><div class="line">    initialRoute=&#123;&#123;&#125;&#125;</div><div class="line">    renderScene=&#123;this.renderScene&#125;</div><div class="line">  /&gt;</div></pre></td></tr></table></figure>
+<p><code>renderScene</code> is like a router that switch scene.<br>Default <code>F8TabsView.js</code></p>
 </li>
 <li><p>Remove event Listen Back Button</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">componentWillUnmount: function() &#123;</div><div class="line">  BackAndroid.removeEventListener(&apos;hardwareBackPress&apos;, this.handleBackButton);</div><div class="line">&#125;,</div></pre></td></tr></table></figure>
-<p>4.Note<br>Context in React is like Global Variable. So you have consider when use it.<br>It will take more memory and may be reduce performance.</p>
+</li>
+<li><p>Note<br>Context in React is like Global Variable. So you have consider when use it.<br>It will take more memory and may be reduce performance.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">getChildContext() &#123;</div><div class="line">  return &#123;</div><div class="line">    addBackButtonListener: this.addBackButtonListener,</div><div class="line">    removeBackButtonListener: this.removeBackButtonListener,</div><div class="line">    &#125;;</div><div class="line">  &#125;,</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<h3 id="4-F8TabView-js-js-tab-F8TabsView-android-js-and-F8TabView-ios-js"><a href="#4-F8TabView-js-js-tab-F8TabsView-android-js-and-F8TabView-ios-js" class="headerlink" title="4. F8TabView.js (./js/tab/F8TabsView.android.js and F8TabView.ios.js)"></a>4. F8TabView.js (./js/tab/F8TabsView.android.js and F8TabView.ios.js)</h3><p>Change Tab of DrawerLayout in Android or Tab of TabBar in IOS.<br>Explain why have F8TabsView.android.js and F8TabView.ios.js.</p>
+<pre><code>1. When you run app on IOS RN(React Native) know call F8TabView.ios.js automatic. also when you run Android, it will call F8TabView.android.js
+2. F8TabView.android use Drawer Layout (`DrawerLayoutAndroid` package) in Android, F8TabView.ios use TabBar(`TabBarIOS` package) in IOS.
+So we should separate file for compatible with User Experience(UX).
+</code></pre><p>F8TabView control tab by redux. So It can save the current tab even when you exit F8 App. (So interesting :D)</p>
 <p>……Continue……</p>
 
         </div>
