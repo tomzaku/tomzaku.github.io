@@ -17,7 +17,7 @@ Các câu hỏi đặt raNếu bạn đã trả lời hết những c">
 <meta property="og:description" content="Nguyên nhân lập topic-&amp;gt; Nhầm chia sẽ những thứ mình hiểu và nằm rõ trong quá trình vọc vạch.-&amp;gt; Lưu trữ lại các quá trình, sau này có thể đọc lại.
 Các câu hỏi đặt raNếu bạn đã trả lời hết những c">
 <meta property="og:image" content="https://www.myworldofwork.co.uk/sites/default/files/images/cv-sized-no-pic.jpg">
-<meta property="og:updated_time" content="2017-01-03T09:55:47.000Z">
+<meta property="og:updated_time" content="2017-01-03T10:22:25.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hiểu rõ nguyên nhân và phòng chống các thủ thuật tấn công wireless">
 <meta name="twitter:description" content="Nguyên nhân lập topic-&amp;gt; Nhầm chia sẽ những thứ mình hiểu và nằm rõ trong quá trình vọc vạch.-&amp;gt; Lưu trữ lại các quá trình, sau này có thể đọc lại.
@@ -179,38 +179,29 @@ ga('send', 'pageview');
 <li>Cơ chế ngắt mạng victim ra sao? Vì sao người ngoài ( người không cần kết nối wifi nhà bạn ) có thể phá network nhà bạn?</li>
 <li>Một ngày đẹp trời bạn thấy một cái AP( wifi thường gọi, nhưng không phải nhé ) giống mình, Vì sao thế?</li>
 <li>Pass facebook/gmail/…. bị mất? Nguyên nhân?</li>
-<li><p>Khắc phục những lỗi trên ra sao? Bạn có chắc đang dùng 1 network an toàn?</p>
-<h1 id="Cac-khai-niem-co-ban-truoc-khi-tra-loi-cau-hoi"><a href="#Cac-khai-niem-co-ban-truoc-khi-tra-loi-cau-hoi" class="headerlink" title="Các khái niệm cơ bản trước khi trả lời câu hỏi"></a>Các khái niệm cơ bản trước khi trả lời câu hỏi</h1><p>Các khái niệm mình được rút gọn, và được định nghĩa theo phong cách mình. Nếu các bạn chưa hiểu rõ có thể bình luận phía dưới nhà.</p>
-</li>
-<li><p>AP là gì? Station là gì?</p>
-<p>AP : Access Point<br>AP như là cái <code>card wireless</code> có hổ trợ <code>phát wireless</code>.<br>Điện thoại có hổ trợ phát Wifi =&gt; Nó là AP<br>Laptop phát Wifi =&gt; Nó là AP<br>Usb Wireless =&gt; Nó là AP</p>
-<p>Station: Máy trạm<br>Chúng ta đã hiểu AP là máy phát. Vậy AP cần các máy thu để trao đổi dữ liệu.<br>Máy thu có thể hiểu là station.<br>Vậy Station là các kết nối tới AP.</p>
-<p>Tóm lại: AP phát, Station thu.</p>
-</li>
-<li><p>Bạn có tự hỏi khi chúng ta bật wifi từ thiết bị, Chúng ta thấy tất cả các Wi-Fi xung quanh? Và có những WiFi nội bộ bạn không thấy được, tại sao vậy?</p>
-<p>Trả lời câu hỏi này bạn phải biết Beacon Frame là gì?<br>Định nghĩa Wiki thì rẫy.</p>
-<p>Mình nói tóm tắt lại.<br>AP phát ra dựa vào sóng RF( Radio Frequency) hay bạn thường gọi là sóng radio đấy. Vậy AP phát cái gì?<br>Nó phát các frame(gồm package). Từ đây bạn có thể đoán được, tại sao device nhận được WiFi xung quanh?.</p>
+<li>Khắc phục những lỗi trên ra sao? Bạn có chắc đang dùng 1 network an toàn?<h1 id="Cac-khai-niem-co-ban-truoc-khi-tra-loi-cau-hoi"><a href="#Cac-khai-niem-co-ban-truoc-khi-tra-loi-cau-hoi" class="headerlink" title="Các khái niệm cơ bản trước khi trả lời câu hỏi"></a>Các khái niệm cơ bản trước khi trả lời câu hỏi</h1>Các khái niệm mình được rút gọn, và được định nghĩa theo phong cách mình. Nếu các bạn chưa hiểu rõ có thể bình luận phía dưới nhà.</li>
+</ol>
+<h2 id="1-AP-la-gi-Station-la-gi"><a href="#1-AP-la-gi-Station-la-gi" class="headerlink" title="1. AP là gì? Station là gì?"></a>1. AP là gì? Station là gì?</h2><p>  AP : <code>Access Point</code><br>  AP như là cái <code>card wireless</code> có hổ trợ <code>phát wireless</code>.<br>  Điện thoại có hổ trợ phát Wifi =&gt; Nó là AP<br>  Laptop phát Wifi =&gt; Nó là AP<br>  Usb Wireless =&gt; Nó là AP<br>  Station: Máy trạm<br>  Chúng ta đã hiểu AP là máy phát. Vậy AP cần các máy thu để trao đổi dữ liệu.<br>  Máy thu có thể hiểu là station.<br>  Vậy Station là các kết nối tới AP.</p>
+<p>  Tóm lại: AP phát, Station thu.</p>
+<h2 id="2-Ban-co-tu-hoi-khi-chung-ta-bat-wifi-tu-thiet-bi-Chung-ta-thay-tat-ca-cac-Wi-Fi-xung-quanh-Va-co-nhung-WiFi-noi-bo-ban-khong-thay-duoc-tai-sao-vay"><a href="#2-Ban-co-tu-hoi-khi-chung-ta-bat-wifi-tu-thiet-bi-Chung-ta-thay-tat-ca-cac-Wi-Fi-xung-quanh-Va-co-nhung-WiFi-noi-bo-ban-khong-thay-duoc-tai-sao-vay" class="headerlink" title="2. Bạn có tự hỏi khi chúng ta bật wifi từ thiết bị, Chúng ta thấy tất cả các Wi-Fi xung quanh? Và có những WiFi nội bộ bạn không thấy được, tại sao vậy?"></a>2. Bạn có tự hỏi khi chúng ta bật wifi từ thiết bị, Chúng ta thấy tất cả các Wi-Fi xung quanh? Và có những WiFi nội bộ bạn không thấy được, tại sao vậy?</h2><p>  Trả lời câu hỏi này bạn phải biết Beacon Frame là gì?<br>  AP phát ra dựa vào sóng RF( Radio Frequency) hay bạn thường gọi là sóng radio đấy. Vậy AP phát cái gì?<br>  Nó phát các frame(gồm package). Từ đây bạn có thể đoán được, tại sao device nhận được WiFi xung quanh?.</p>
 <blockquote>
-<p>AP nó phát frame giúp người khác biết nó là ai, và nó ở đâu với</p>
+<p>AP nó phát frame giúp người khác biết nó là ai, và độ mạnh của AP</p>
 </blockquote>
-<p>Frame đó là gì?</p>
+<p>  <strong>Frame đó là gì?</strong></p>
 <blockquote>
 <p>Beacon Frame</p>
 </blockquote>
-<p>Vậy Beacon Frame là Frame được phát ra từ AP xung quanh AP giúp device nhận được.</p>
-<p>Beacon Frame có gì? Gồm có thông tin AP như tôi đã nói? Vậy thông tin chính xác nó là gì?</p>
-<p>Thật thú vị nếu bạn tự tìm hiểu nó bằng tool Wireshark(google để download nó nhé). Phần mềm này có thể bắt tất cả các gói tin xung quanh bạn. Đòi hỏi quyền root vì nó dùng raw-socket.<br>Mình sẽ gửi vài hình ảnh dưới đây nếu các bạn nhác (Khuyến cáo không nên :D)</p>
-<p>Ở đây các bạn chú ý: Signal Strength( thể hiện độ mạnh yếu Wireless). Nghiên cứu tại (đây)[<a href="https://support.metageek.com/hc/en-us/articles/201955754-Understanding-WiFi-Signal-Strength" target="_blank" rel="external">https://support.metageek.com/hc/en-us/articles/201955754-Understanding-WiFi-Signal-Strength</a>]<br>Destination : ở dạng MAC ff:ff:ff:ff:ff:ff =&gt; AP muốn tất cả các device đều nhận.<br>Source Address == BSSID : 18:44:e6:e1:b2:c4 (Gồm 24 bit đầu Nhà sản xuất, 24 bit cuối là Serial của từng card mạng )<br>Ngoài ra còn có SSID: Gồm tên của Wireless mà AP tạo ra cho các trạm biết được.(Nằm ở mục Wireless Lan Management)</p>
-<ol>
-<li>Bạn đã nắm được Beacon frame. Bạn có thắc mắc bạn, bạn scan network và chợt ra wifi cũ(wifi bạn đã kết nối ở nơi khác) lại xuất hiện ở nơi mới?</li>
-</ol>
-<p>Trường hợp này có thể xuất hiện ở một số device, một số device thì không.<br>Câu trả lời đây là Probe Frame. Mà chính xác ở đây là Probe Frame Request.<br>Probe Frame Request được tạo ra từ máy trạm nhằm mong muốn kết nối tới AP cũ.<br>Tùy thuộc vào thuật toán nhận Wireless trên từng thiết bị có thể  nó sẽ bắt lấy Probe Request. Và dĩ nhiên nó đã vô tình lấy Wifi cũ nhà bạn và lưu trong list Wifi hiện sẵn.</p>
-<ol>
-<li>Bạn đã hiểu cơ chế nhận Wireless rồi. Vậy bạn đã hiểu cơ chế xác thực(authentication) và kết họp (association) từ máy trạm đến AP chưa?</li>
-</ol>
-<p>(Link)[<a href="https://mrncciew.com/2014/10/10/802-11-mgmt-authentication-frame/" target="_blank" rel="external">https://mrncciew.com/2014/10/10/802-11-mgmt-authentication-frame/</a>]</p>
-</li>
-</ol>
+<p>  Vậy <code>Beacon Frame</code> là frame được phát ra từ AP giúp device(điện thoại, laptop ….) thấy được.</p>
+<p>  <strong>Beacon Frame có gì? Gồm có thông tin AP như tôi đã nói? Vậy thông tin chính xác nó là gì?</strong></p>
+<p>  Thật thú vị nếu bạn tự tìm hiểu nó bằng tool <code>Wireshark</code>(google để download nó nhé). Phần mềm này có thể bắt tất cả các gói tin xung quanh bạn. Đòi hỏi quyền root vì nó dùng raw-socket.<br>  Mình sẽ gửi vài hình ảnh dưới đây nếu các bạn nhác (Khuyến cáo không nên :D)</p>
+<p>  Ở đây các bạn chú ý:</p>
+<ul>
+<li><strong>Signal Strength</strong>( thể hiện độ mạnh yếu Wireless). Nghiên cứu tại <a href="https://support.metageek.com/hc/en-us/articles/201955754-Understanding-WiFi-Signal-Strength" target="_blank" rel="external">đây</a></li>
+<li><strong>Destination</strong> : ở dạng MAC ff:ff:ff:ff:ff:ff =&gt; AP muốn tất cả các <code>device đều nhận</code>.             </li>
+<li><strong>Source Address == BSSID</strong> : 18:44:e6:e1:b2:c4 (Gồm 24 bit đầu Nhà sản xuất, 24 bit cuối là Serial của từng card mạng )<br>Ngoài ra còn có SSID: Gồm tên của Wireless mà AP tạo ra cho các trạm biết được.(Nằm ở mục Wireless Lan Management)</li>
+</ul>
+<h2 id="3-Ban-da-nam-duoc-Beacon-frame-Ban-da-tung-thac-mac-ban-scan-wifi-va-chot-ra-wifi-cu-wifi-ban-da-ket-noi-o-noi-khac-lai-xuat-hien-o-noi-moi"><a href="#3-Ban-da-nam-duoc-Beacon-frame-Ban-da-tung-thac-mac-ban-scan-wifi-va-chot-ra-wifi-cu-wifi-ban-da-ket-noi-o-noi-khac-lai-xuat-hien-o-noi-moi" class="headerlink" title="3. Bạn đã nắm được Beacon frame. Bạn đã từng thắc mắc , bạn scan wifi và chợt ra wifi cũ(wifi bạn đã kết nối ở nơi khác) lại xuất hiện ở nơi mới?"></a>3. Bạn đã nắm được Beacon frame. Bạn đã từng thắc mắc , bạn scan wifi và chợt ra wifi cũ(wifi bạn đã kết nối ở nơi khác) lại xuất hiện ở nơi mới?</h2><p>  Trường hợp này có thể xuất hiện ở một số device, một số device thì không.<br>  Câu trả lời đây là <strong>Probe Frame</strong>. Mà chính xác ở đây là <strong>Probe Frame Request</strong>.<br>  <strong>Probe Frame Request</strong> được tạo ra từ máy trạm nhằm mong muốn kết nối tới AP cũ.<br>  Tùy thuộc vào <code>thuật toán nhận Wireless</code> trên từng thiết bị có thể  nó sẽ bắt lấy <code>Probe Request</code>. Và dĩ nhiên nó đã vô tình lấy Wifi cũ nhà bạn và lưu trong list Wifi hiện sẵn.</p>
+<h2 id="4-Ban-da-hieu-co-che-nhan-Wireless-roi-Vay-ban-da-hieu-co-che-xac-thuc-authentication-va-ket-hop-association-tu-may-tram-den-AP-chua"><a href="#4-Ban-da-hieu-co-che-nhan-Wireless-roi-Vay-ban-da-hieu-co-che-xac-thuc-authentication-va-ket-hop-association-tu-may-tram-den-AP-chua" class="headerlink" title="4. Bạn đã hiểu cơ chế nhận Wireless rồi. Vậy bạn đã hiểu cơ chế xác thực(authentication) và kết họp (association) từ máy trạm đến AP chưa?"></a>4. Bạn đã hiểu cơ chế nhận Wireless rồi. Vậy bạn đã hiểu cơ chế xác thực(authentication) và kết họp (association) từ máy trạm đến AP chưa?</h2><p>  <a href="https://mrncciew.com/2014/10/10/802-11-mgmt-authentication-frame/" target="_blank" rel="external">Link</a></p>
 
         </div>
         <footer class="article-footer">
