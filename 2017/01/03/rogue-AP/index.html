@@ -17,7 +17,7 @@ Các câu hỏi đặt raNếu bạn đã trả lời hết những">
 <meta property="og:description" content="Nguyên nhân lập topic-&amp;gt; Nhầm chia sẽ những thứ mình hiểu và nằm rõ trong quá trình vọc vạch.-&amp;gt; Lưu trữ lại các quá trình, sau này có thể đọc lại.
 Các câu hỏi đặt raNếu bạn đã trả lời hết những">
 <meta property="og:image" content="https://camo.githubusercontent.com/527bf73d81ccb73d4f02899da1958f821a5c170a/68747470733a2f2f736f7068726f6e2e6769746875622e696f2f77696669706869736865722f6469616772616d2e6a7067">
-<meta property="og:updated_time" content="2017-01-07T10:18:03.000Z">
+<meta property="og:updated_time" content="2017-02-18T09:51:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hiểu rõ nguyên nhân và phòng chống các thủ thuật tấn công wireless">
 <meta name="twitter:description" content="Nguyên nhân lập topic-&amp;gt; Nhầm chia sẽ những thứ mình hiểu và nằm rõ trong quá trình vọc vạch.-&amp;gt; Lưu trữ lại các quá trình, sau này có thể đọc lại.
@@ -207,7 +207,7 @@ ga('send', 'pageview');
 </ul>
 <h3 id="4-Ban-da-nam-duoc-Beacon-frame-Ban-da-tung-thac-mac-ban-scan-wifi-va-chot-ra-wifi-cu-wifi-ban-da-ket-noi-o-noi-khac-lai-xuat-hien-o-noi-moi"><a href="#4-Ban-da-nam-duoc-Beacon-frame-Ban-da-tung-thac-mac-ban-scan-wifi-va-chot-ra-wifi-cu-wifi-ban-da-ket-noi-o-noi-khac-lai-xuat-hien-o-noi-moi" class="headerlink" title="4. Bạn đã nắm được Beacon frame. Bạn đã từng thắc mắc , bạn scan wifi và chợt ra wifi cũ(wifi bạn đã kết nối ở nơi khác) lại xuất hiện ở nơi mới?"></a>4. Bạn đã nắm được Beacon frame. Bạn đã từng thắc mắc , bạn scan wifi và chợt ra wifi cũ(wifi bạn đã kết nối ở nơi khác) lại xuất hiện ở nơi mới?</h3><p>  Trường hợp này có thể xuất hiện ở một số device, một số device thì không.<br>  Câu trả lời đây là <strong>Probe Frame</strong>. Mà chính xác ở đây là <strong>Probe Frame Request</strong>.<br>  <strong>Probe Frame Request</strong> được tạo ra từ máy trạm nhằm mong muốn kết nối tới AP cũ.<br>  Tùy thuộc vào <code>thuật toán nhận Wireless</code> trên từng thiết bị có thể  nó sẽ bắt lấy <code>Probe Request</code>. Và dĩ nhiên nó đã vô tình lấy Wifi cũ nhà bạn và lưu trong list Wifi hiện sẵn.</p>
 <h3 id="5-Ban-da-hieu-co-che-nhan-Wireless-roi-Vay-co-che-xac-thuc-authentication-va-ket-hop-association-tu-may-tram-den-AP-la-nhu-the-nao"><a href="#5-Ban-da-hieu-co-che-nhan-Wireless-roi-Vay-co-che-xac-thuc-authentication-va-ket-hop-association-tu-may-tram-den-AP-la-nhu-the-nao" class="headerlink" title="5. Bạn đã hiểu cơ chế nhận Wireless rồi. Vậy cơ chế xác thực(authentication) và kết họp (association) từ máy trạm đến AP là như thế nào?"></a>5. Bạn đã hiểu cơ chế nhận Wireless rồi. Vậy cơ chế xác thực(authentication) và kết họp (association) từ máy trạm đến AP là như thế nào?</h3><p>  <img src="/images/auuthentication_wireless.png" alt="Cơ chế authentication và asociation"><br>  Máy trạm muốn kết nối tới AP phải qua 2 frame : Authentication và association.<br>  Đầu tiên Máy trạm gửi <code>authentication request</code> cho AP. Mục đích của frame này giúp AP nhận ra máy trạm là ai.<br>  Sau khi lấy thông tin máy trạm, AP gửi lại authentication reponse, mục đích là giúp máy trạm biết được AP đã nhận.<br>  Sau bước này: Máy trạm đã authenticated, unassociate.<br>  TIếp tục máy trạm gửi association request frame. Bao gồm Password Wireless được mã hóa tùy thuộc vào AP được chia sẽ bởi Share Key.<br>  AP sẽ trả về association response frame về phía máy trạm. Có thể thành công hoặc thất bại</p>
-<h1 id="Cac-cach-tan-cong-cua-Attacker"><a href="#Cac-cach-tan-cong-cua-Attacker" class="headerlink" title="Các cách tấn công của Attacker?"></a>Các cách tấn công của Attacker?</h1><h3 id="1-Crack-Wifi-cu-chuoi"><a href="#1-Crack-Wifi-cu-chuoi" class="headerlink" title="1. Crack Wifi (củ chuối)"></a>1. Crack Wifi (củ chuối)</h3><p>  Nguyên tắc: Attacker dùng 1 list password( khoảng mấy GB, chứa các password thông dụng ) dò mật khẩu Wifi nhà bạn<br>  Độ nguy hiểm: Attacker có thể dò 3000-7000 passwords/s (tùy thuộc vào cấu hình máy)<br>  Cách thức: Sử dụng các tool(aircrack-ng, ….)<br>  Phòng chống: Đặt password hạn chế về nguyên tắt, ví dụ: “jUSLOMSBHSMBFKS2HM1” (&gt;12 ký tự)</p>
+<h1 id="Cac-cach-tan-cong-cua-Attacker"><a href="#Cac-cach-tan-cong-cua-Attacker" class="headerlink" title="Các cách tấn công của Attacker"></a>Các cách tấn công của Attacker</h1><h3 id="1-Crack-Wifi-cu-chuoi"><a href="#1-Crack-Wifi-cu-chuoi" class="headerlink" title="1. Crack Wifi (củ chuối)"></a>1. Crack Wifi (củ chuối)</h3><p><a href="http://zakurobot.com/" target="_blank" rel="external">http://zakurobot.com/</a><br>  Nguyên tắc: Attacker dùng 1 list password( khoảng mấy GB, chứa các password thông dụng ) dò mật khẩu Wifi nhà bạn<br>  Độ nguy hiểm: Attacker có thể dò 3000-7000 passwords/s (tùy thuộc vào cấu hình máy)<br>  Cách thức: Sử dụng các tool(aircrack-ng, ….)<br>  Phòng chống: Đặt password hạn chế về nguyên tắt, ví dụ: “jUSLOMSBHSMBFKS2HM1” (&gt;12 ký tự)</p>
 <h3 id="2-AP-Rouge-nguy-hiem-hon"><a href="#2-AP-Rouge-nguy-hiem-hon" class="headerlink" title="2. AP Rouge (nguy hiểm hơn)"></a>2. AP Rouge (nguy hiểm hơn)</h3><p>  Nguyên tắc: Attacker cần 2 card wifi. 1 card dùng để ngắt quyền truy cập client bằng cách gửi deauthentication frame. Card còn lại dùng để tạo AP giả để dụ victim vào AP giả của mình.</p>
 <p>  <strong>Chi tiết:</strong><br>  <img src="/images/ap-rouge-principle.png" alt="Cơ chế tấn công từ Attacker"><br>  <strong>a. Card 1: Ngắt quyền truy cập</strong><br>    Attacker tạo một deauthentication giả gửi tới client, client cử tưởng đó là AP thật nên thoát hẳn Wifi.<br>    Deauthentication giả: gồm MAC nguồn(Giả từ MAC của AP thật), MAC đích(sẽ là một list MAC nhằm gửi tất cả).<br>    Khi phát hiện có victim trong list MAC bằng cách victim sẽ cố gửi lại deauthentication frame lại cho AP. thì Attacker liên tục gửi deauthentication frame cho victim<br>  <strong>b. Card 2: Tạo AP giả</strong><br>    Ở đây có thể thiết lập website( nhằm lấy thông tin người dùng ) dụ victim truy cập khi truy cập AP giả.</p>
 <p>  Độ nguy hiểm: Cao, có thể mất thông tin người dùng….., Không cho phép người dùng truy cập mạng, gây rất mạng liên tục</p>
@@ -219,7 +219,7 @@ ga('send', 'pageview');
 
 
 
-    <a data-url="http://yoursite.com/2017/01/03/rogue-AP/" data-id="cixhchern0000th8zmyp0yizp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://yoursite.com/2017/01/03/rogue-AP/" data-id="cj0ri48bv000gw8p0msh2qqg7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -363,6 +363,16 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
+        <a href="/2017/03/27/experience-react-native/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            Những kinh nghiệm với React Native trong 6 tháng
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
     
         <a href="/2016/12/23/learning-f8-app-rn/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">older</strong>
@@ -381,6 +391,26 @@ ga('send', 'pageview');
         <h3 class="widget-title">recents</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2017/03/27/experience-react-native/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://c1.staticflickr.com/4/3947/33288549710_b91a7c7403_k.jpg)" alt="Những kinh nghiệm với React Native trong 6 tháng" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2017/03/27/experience-react-native/" class="title">Những kinh nghiệm với React Native trong 6 tháng</a></p>
+                            <p class="item-date"><time datetime="2017-03-27T02:28:55.000Z" itemprop="datePublished">2017-03-27</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -462,26 +492,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2016/11/27/hackintosh/" class="thumbnail">
-    
-    
-        <span style="background-image:url(https://www.thegioididong.com/images/44/70028/dell-inspiron-7447-1.jpg)" alt="Hackintosh with Dell 7447" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2016/11/27/hackintosh/" class="title">Hackintosh with Dell 7447</a></p>
-                            <p class="item-date"><time datetime="2016-11-26T17:00:17.000Z" itemprop="datePublished">2016-11-27</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -494,7 +504,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">5</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/11/">November 2016</a><span class="archive-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -504,7 +514,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CIH/">CIH</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/">english</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hackintosh/">hackintosh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native/">react native</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/story/">story</a><span class="tag-list-count">3</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CIH/">CIH</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/english/">english</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hackintosh/">hackintosh</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/react-native/">react native</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/story/">story</a><span class="tag-list-count">3</span></li></ul>
         </div>
     </div>
 
@@ -514,7 +524,7 @@ ga('send', 'pageview');
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/CIH/" style="font-size: 20px;">CIH</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/hackintosh/" style="font-size: 10px;">hackintosh</a> <a href="/tags/react-native/" style="font-size: 10px;">react native</a> <a href="/tags/story/" style="font-size: 20px;">story</a>
+            <a href="/tags/CIH/" style="font-size: 20px;">CIH</a> <a href="/tags/english/" style="font-size: 10px;">english</a> <a href="/tags/hackintosh/" style="font-size: 10px;">hackintosh</a> <a href="/tags/react-native/" style="font-size: 15px;">react native</a> <a href="/tags/story/" style="font-size: 20px;">story</a>
         </div>
     </div>
 

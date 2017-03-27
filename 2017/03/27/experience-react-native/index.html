@@ -3,15 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2016/12 | Tom&#39;s Blog</title>
+    <title>Những kinh nghiệm với React Native trong 6 tháng | Tom&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Tom's Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2016/12/index.html">
+        <meta name="keywords" content="react native" />
+    
+    <meta name="description" content="Bài viết dành cho những người đã hiểu sơ qua về React-Native. Bài này sẽ nói lên kinh nghiệm React Native theo góc nhìn của mình. Nếu bài viết của mình có gì sai sót hay thiếu sót, các bạn có thể com">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Những kinh nghiệm với React Native trong 6 tháng">
+<meta property="og:url" content="http://yoursite.com/2017/03/27/experience-react-native/index.html">
 <meta property="og:site_name" content="Tom's Blog">
+<meta property="og:description" content="Bài viết dành cho những người đã hiểu sơ qua về React-Native. Bài này sẽ nói lên kinh nghiệm React Native theo góc nhìn của mình. Nếu bài viết của mình có gì sai sót hay thiếu sót, các bạn có thể com">
+<meta property="og:image" content="https://c1.staticflickr.com/4/3947/33288549710_b91a7c7403_k.jpg">
+<meta property="og:updated_time" content="2017-03-27T03:37:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Tom's Blog">
+<meta name="twitter:title" content="Những kinh nghiệm với React Native trong 6 tháng">
+<meta name="twitter:description" content="Bài viết dành cho những người đã hiểu sơ qua về React-Native. Bài này sẽ nói lên kinh nghiệm React Native theo góc nhìn của mình. Nếu bài viết của mình có gì sai sót hay thiếu sót, các bạn có thể com">
+<meta name="twitter:image" content="https://c1.staticflickr.com/4/3947/33288549710_b91a7c7403_k.jpg">
     
 
     
@@ -132,180 +140,125 @@ ga('send', 'pageview');
                         <div class="main-body-header">
     <h1 class="header">
     
-    <i class="icon fa fa-archive"></i>Archive: 2016/12
+    uncategorized
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-experience-react-native" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Những kinh nghiệm với React Native trong 6 tháng
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2016" class="archive-year"><i class="icon fa fa-calendar-o"></i>2016</a>
+            <div class="article-subtitle">
+                <a href="/2017/03/27/experience-react-native/" class="article-date">
+    <time datetime="2017-03-27T02:28:55.000Z" itemprop="datePublished">2017-03-27</time>
+</a>
+                
+    <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-native/">react native</a></li></ul>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/2016/12/23/learning-f8-app-rn/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/images/f8app_flow.png)" alt="Learning F8 App ReactNative by UML" class="thumbnail-image"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2016/12/23/learning-f8-app-rn/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-12-23T13:27:27.000Z" itemprop="datePublished">2016-12-23</time></p>
+        <div class="article-entry" itemprop="articleBody">
+            <p><img src="https://c1.staticflickr.com/4/3947/33288549710_b91a7c7403_k.jpg" alt=""></p>
+<p>Bài viết dành cho những người đã hiểu sơ qua về React-Native. Bài này sẽ nói lên kinh nghiệm React Native theo góc nhìn của mình. Nếu bài viết của mình có gì sai sót hay thiếu sót, các bạn có thể comment ở phía dưới để mình tiện chỉnh sửa. Mình cảm ơn nhiều.</p>
+<h2 id="Vong-doi-song-trong-react-native"><a href="#Vong-doi-song-trong-react-native" class="headerlink" title="Vòng đời sống trong react-native"></a>Vòng đời sống trong react-native</h2><p><img src="https://cdn-images-1.medium.com/max/1600/0*VoYsN6eq7I_wjVV5.png" alt="Life Cycle React Native"><br>Hình phía trên là miêu tả một quá trình mà react-native gọi lần lượt các hàm.<br>Như trên thì RN(react-native) gọi hàm getDefaultProps() đầu tiên, rồi đến getInitialState(),.. rồi theo trình tự như vậy.<br>Ở đây bạn chú ý:</p>
+<ol>
+<li>Mọi hoạt động trên native dựa vào <code>state</code> tức có nghĩa là mỗi khi <code>state</code> thay đổi thì RN sẽ gọi hàm render lại. Hay nói cách khác bạn hãy sử dụng 4 khốn khéo ở <code>state</code> để hạn chế hay muốn re-render lại Component. Vì sao lại hạn chế? Nếu bạn sử dụng <code>state</code> 1 cách bừa bãi, điều này sẽ ảnh hưởng tới hiệu năng ứng dụng của bạn. Làm cho ứng dụng bạn phải cực nhọc re-render liên tục. Bạn phải cân nhắc component nào thì render, component nào không, hay component nào là luôn luôn không. Dựa vào <code>PureComponent</code> trong RN.<br><code>PureComponent</code> giúp ta kiểm tra props trước và props hiện tại có giống nhau không. Nếu giống thì sẽ không re-render lại.<br><strong>Ví dụ:</strong><br>Mình có app như thế này<br><a href="https://github.com/tomzaku/Calculator-React-Native-Simple" target="_blank" rel="external">https://github.com/tomzaku/Calculator-React-Native-Simple</a><br><img src="https://camo.githubusercontent.com/03143983d4ea418ac4141c0b1e6fbaca14727684/687474703a2f2f7376312e757073696575746f632e636f6d2f323031362f31322f31362f53637265656e53686f74323031362d31322d31366174392e34372e3330414d2e706e67" alt=""></li>
+</ol>
+<p>Nhìn trên thì bạn có thể thấy các button (AC, /, X , - +,=,1,2,3,4,5,6,7,8,9,0,00,.) hầu như không thây đổi gì cả trong quá trình ứng dụng nên mình sẽ sử dụng <code>PureComponent</code> cho button ấy<br>Nên khi mình re-render lại component, RN sẽ nhận biết không cần render lại nữa.</p>
+<ol>
+<li>Ở trên sẽ có hàm shouldComponentUpdate(nextProps,nextState). Hàm này sẽ phát hiện sự thay đổi của props (thường thì compoent cha thay đổi state ảnh hưởng tới compoent con, hoặc từ <code>redux</code>). Từ phát hiện thay đổi props này, các bạn có thể thay đổi state để re-render lại compoent như mình mong muốn<br>Ví dụ :</li>
+</ol>
+<h2 id="Cau-truc-thu-muc-ntn"><a href="#Cau-truc-thu-muc-ntn" class="headerlink" title="Cấu trúc thư mục ntn"></a>Cấu trúc thư mục ntn</h2><h2 id="Tang-hieu-nang-RN"><a href="#Tang-hieu-nang-RN" class="headerlink" title="Tăng hiệu năng RN"></a>Tăng hiệu năng RN</h2><h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><h2 id="Theme-nhu-the-nao-mem-deo-va-linh-hoat"><a href="#Theme-nhu-the-nao-mem-deo-va-linh-hoat" class="headerlink" title="Theme như thế nào mềm dẽo và linh hoạt"></a>Theme như thế nào mềm dẽo và linh hoạt</h2>
         </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/12/23/learning-f8-app-rn/">Learning F8 App ReactNative by UML</a>
-        </h1>
-    
+        <footer class="article-footer">
+            
 
-        <p class="article-excerpt">
-            Just for learning F8app(by facebook)
 
-Describe  F8 app is created by Facebook. It’s a basic example for React-Native (use redux).  You can check here: https://github.com/fbsamples/f8app/tree/master/js
-        </p>
+
+    <a data-url="http://yoursite.com/2017/03/27/experience-react-native/" data-id="cj0ri48b20000w8p09n3runym" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/12/22/relation-diagram/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://3.bp.blogspot.com/-FmHkAYMZQ38/U87FHYqfoOI/AAAAAAAAAiw/etL5PrcEECI/s1600/bfBSY.png)" alt="Relationship Class Diagram" class="thumbnail-image"></span>
-    
+    <section id="comments">
     
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2016/12/22/relation-diagram/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-12-22T14:05:13.000Z" itemprop="datePublished">2016-12-22</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/12/22/relation-diagram/">Relationship Class Diagram</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Ví dụ mang tính hài hước theo cách hiểu của mình.Mọi người có gì phản hồi nếu sai :D
-#1. Association   —— / —–&gt;Có quan hệ mức thấp nhất.Class A sở hửu class B hoặc class B sử dụng class A
-#2. Aggre
-        </p>
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
-</article>
-    
-        </div>
-    
 
     
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2016/12/15/osi-model/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://1.bp.blogspot.com/-IbHwHJlvNgc/VX8T0k4OG5I/AAAAAAAAARY/dULBsO346yI/s1600/OSI.jpg)" alt="The Open Systems Interconnection Layer" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="http://yoursite.com/2016/12/15/osi-model/">0</span>
-    
-</span>
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <p class="category">
-            
-            </p>
-            <p class="date"><time datetime="2016-12-15T05:55:36.000Z" itemprop="datePublished">2016-12-15</time></p>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2016/12/15/osi-model/">The Open Systems Interconnection Layer</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-What is OSI?
-Why is OSI important?
-What OSI used for?
-What is the detail example for OSI?
-How many group of the OSI? and  What function for any group?
-
-
-Answers
-OSI stand for Open Systems Interconnec
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
-
+    </section>
 
                         </div>
                     </section>
@@ -373,6 +326,19 @@ OSI stand for Open Systems Interconnec
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2017/01/03/rogue-AP/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Hiểu rõ nguyên nhân và phòng chống các thủ thuật tấn công wireless</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -564,11 +530,13 @@ OSI stand for Open Systems Interconnec
     var disqus_shortname = 'toms-blog-2';
     
     
+    var disqus_url = 'http://yoursite.com/2017/03/27/experience-react-native/';
+    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
