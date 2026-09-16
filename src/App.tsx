@@ -1,9 +1,11 @@
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
 interface AppLink {
   name: string
   tagline: string
   href: string
+  image: string
   accent: string
 }
 
@@ -12,123 +14,154 @@ const APPS: AppLink[] = [
     name: 'Voca',
     tagline: 'Learn vocabulary through fun games.',
     href: 'https://v.trile.site',
-    accent: '#7c5cff',
+    image: '/art/vocalearn.jpg',
+    accent: 'var(--coral)',
   },
   {
     name: 'Dreamer',
     tagline: 'Build habits and track your day, one checklist at a time.',
     href: 'https://d.trile.site',
-    accent: '#22c1dc',
+    image: '/art/dreamer.jpg',
+    accent: 'var(--mint)',
   },
   {
     name: 'Interview Prep',
     tagline: 'Frontend interview practice with English speaking practice.',
     href: 'https://i.trile.site',
-    accent: '#ff6b81',
+    image: '/art/interview-prep.jpg',
+    accent: 'var(--cobalt)',
   },
 ]
 
-const HEADLINE = "Hi There, I'm Tri (Tom)"
-
-interface Particle {
-  left: number
-  size: number
-  delay: number
-  duration: number
+function SparklesIcon() {
+  return (
+    <svg
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+      <path d="M20 2v4" />
+      <path d="M22 4h-4" />
+      <circle cx="4" cy="20" r="2" />
+    </svg>
+  )
 }
 
-const PARTICLES: Particle[] = [
-  { left: 6, size: 3, delay: 0, duration: 16 },
-  { left: 16, size: 2, delay: 3, duration: 20 },
-  { left: 27, size: 4, delay: 6, duration: 18 },
-  { left: 38, size: 2, delay: 1, duration: 22 },
-  { left: 49, size: 3, delay: 8, duration: 17 },
-  { left: 60, size: 2, delay: 4, duration: 21 },
-  { left: 70, size: 4, delay: 10, duration: 19 },
-  { left: 80, size: 2, delay: 2, duration: 23 },
-  { left: 90, size: 3, delay: 7, duration: 18 },
-  { left: 12, size: 2, delay: 12, duration: 20 },
-  { left: 55, size: 2, delay: 14, duration: 24 },
-  { left: 85, size: 3, delay: 9, duration: 16 },
-]
+function ArrowUpRightIcon() {
+  return (
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M7 7h10v10" />
+      <path d="M7 17 17 7" />
+    </svg>
+  )
+}
 
 function App() {
+  const [isLoaded, setIsLoaded] = useState(false)
+  const rootRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    let raf2 = 0
+    const raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => setIsLoaded(true))
+    })
+    return () => {
+      cancelAnimationFrame(raf1)
+      cancelAnimationFrame(raf2)
+    }
+  }, [])
+
+  useEffect(() => {
+    const el = rootRef.current
+    if (!el) return
+    const handleMove = (e: MouseEvent) => {
+      el.style.setProperty('--pointer-x', `${e.clientX}px`)
+      el.style.setProperty('--pointer-y', `${e.clientY}px`)
+    }
+    window.addEventListener('mousemove', handleMove)
+    return () => window.removeEventListener('mousemove', handleMove)
+  }, [])
+
   return (
-    <>
-      <div className="ant-wrapper" aria-hidden="true">
-        <svg className="ant" viewBox="0 0 100 50" width="34" height="17">
-          <g className="ant-bob">
-            <ellipse className="ant-body-part" cx="30" cy="25" rx="16" ry="10" />
-            <circle className="ant-body-part" cx="52" cy="22" r="9" />
-            <circle className="ant-body-part" cx="66" cy="19" r="7" />
-            <g className="ant-leg ant-leg-a" style={{ transformOrigin: '34px 28px' }}>
-              <polyline points="34,28 28,38 22,44" />
-            </g>
-            <g className="ant-leg ant-leg-b" style={{ transformOrigin: '50px 26px' }}>
-              <polyline points="50,26 48,38 46,45" />
-            </g>
-            <g className="ant-leg ant-leg-a" style={{ transformOrigin: '62px 26px' }}>
-              <polyline points="62,26 68,37 74,44" />
-            </g>
-            <g className="ant-antennae" style={{ transformOrigin: '66px 16px' }}>
-              <line x1="66" y1="16" x2="76" y2="4" />
-              <line x1="66" y1="16" x2="72" y2="2" />
-            </g>
-          </g>
-        </svg>
+    <main
+      ref={rootRef}
+      className={`one-page-portfolio${isLoaded ? ' is-loaded' : ''}`}
+    >
+      <div className="intro-curtain" aria-hidden="true">
+        <span>TRI / TOM</span>
       </div>
-      <div className="container">
-      <div className="particles" aria-hidden="true">
-        {PARTICLES.map((p, i) => (
-          <span
-            key={i}
-            className="particle"
-            style={
-              {
-                '--left': `${p.left}%`,
-                '--size': `${p.size}px`,
-                '--delay': `${p.delay}s`,
-                '--duration': `${p.duration}s`,
-              } as React.CSSProperties
-            }
-          />
-        ))}
-      </div>
+      <div className="pointer-glow" aria-hidden="true" />
 
-      <h1 className="headline">
-        {HEADLINE.split('').map((char, i) => (
-          <span
-            key={i}
-            className="headline-char"
-            style={{ '--i': i } as React.CSSProperties}
-          >
-            {char === ' ' ? ' ' : char}
-          </span>
-        ))}
-      </h1>
-      <p className="subtitle">Here&apos;s what I&apos;ve been building.</p>
+      <header className="one-page-header">
+        <a className="wordmark" href="/" aria-label="Tri home">
+          T<span>&bull;</span>T
+        </a>
+        <div className="availability">
+          <i /> Available for new ideas
+        </div>
+        <span className="edition">PORTFOLIO / 2026</span>
+      </header>
 
-      <div className="cards">
+      <section className="one-page-intro" aria-labelledby="hero-title">
+        <p className="hero-kicker">
+          <SparklesIcon /> Hello, I&apos;m
+        </p>
+        <h1 id="hero-title">
+          Tri <em>(Tom)</em>
+        </h1>
+        <p className="intro-copy">Here&apos;s what I&apos;ve been building.</p>
+      </section>
+
+      <section className="project-grid" aria-label="Selected projects">
         {APPS.map((app, i) => (
           <a
             key={app.name}
-            className="card"
+            className="project-card"
             href={app.href}
-            style={
-              {
-                '--accent': app.accent,
-                '--i': i,
-              } as React.CSSProperties
-            }
+            style={{ '--project-accent': app.accent } as React.CSSProperties}
           >
-            <span className="card-glow" />
-            <span className="card-name">{app.name}</span>
-            <span className="card-tagline">{app.tagline}</span>
+            <div className="card-art">
+              <img
+                src={app.image}
+                alt={`Playful sculptural artwork representing ${app.name}`}
+                loading="eager"
+                width={1408}
+                height={1008}
+              />
+              <div className="image-sheen" aria-hidden="true" />
+              <span className="card-number">{String(i + 1).padStart(2, '0')}</span>
+            </div>
+            <div className="card-copy">
+              <h2>{app.name}</h2>
+              <p>{app.tagline}</p>
+              <ArrowUpRightIcon />
+            </div>
           </a>
         ))}
-      </div>
-      </div>
-    </>
+      </section>
+
+      <footer className="one-page-footer">
+        <span>Frontend &middot; Product &middot; Play</span>
+        <span>Three ideas, always evolving.</span>
+      </footer>
+    </main>
   )
 }
 
