@@ -20,6 +20,12 @@ const APPS: AppLink[] = [
     href: 'https://d.trile.site',
     accent: '#0b7dc2',
   },
+  {
+    name: 'Interview Prep',
+    tagline: 'Frontend interview practice with English speaking practice.',
+    href: 'https://i.trile.site',
+    accent: '#0e0e14',
+  },
 ]
 
 function App() {
