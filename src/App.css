@@ -288,8 +288,8 @@ a {
   transform: translate(120%);
 }
 
-.project-card:hover .card-copy svg,
-.project-card:focus-visible .card-copy svg {
+.project-card:hover .card-arrow,
+.project-card:focus-visible .card-arrow {
   transform: translate(0.2rem, -0.2rem);
 }
 
@@ -303,7 +303,7 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: top;
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s;
 }
 
@@ -350,7 +350,24 @@ a {
   line-height: 1.35;
 }
 
-.card-copy svg {
+.card-ai {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.35rem;
+  margin-top: 0.5rem !important;
+  color: var(--project-accent);
+  font-size: clamp(0.62rem, 0.82vw, 0.78rem);
+  line-height: 1.35;
+}
+
+.card-ai svg {
+  flex-shrink: 0;
+  width: 0.85em;
+  height: 0.85em;
+  margin-top: 0.2em;
+}
+
+.card-arrow {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -464,7 +481,7 @@ a {
   .availability i,
   .card-art img,
   .image-sheen,
-  .card-copy svg,
+  .card-arrow,
   .intro-curtain span {
     transition: none !important;
     animation: none !important;

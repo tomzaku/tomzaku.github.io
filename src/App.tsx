@@ -4,6 +4,7 @@ import './App.css'
 interface AppLink {
   name: string
   tagline: string
+  aiFeature: string
   href: string
   image: string
   accent: string
@@ -12,7 +13,8 @@ interface AppLink {
 const APPS: AppLink[] = [
   {
     name: 'Voca',
-    tagline: 'Learn vocabulary through fun games.',
+    tagline: 'A playful vocabulary game. Guess words, drag them into stories, speak them out loud.',
+    aiFeature: 'AI writes the clues, dialogues, and stories, and doubles as a voice tutor for speaking practice.',
     href: 'https://v.trile.site',
     image: '/art/vocalearn.jpg',
     accent: 'var(--coral)',
@@ -20,13 +22,15 @@ const APPS: AppLink[] = [
   {
     name: 'Dreamer',
     tagline: 'Build habits and track your day, one checklist at a time.',
+    aiFeature: 'Type what you want to build and AI turns it into a full checklist with fields, schedule, and notes.',
     href: 'https://d.trile.site',
     image: '/art/dreamer.jpg',
     accent: 'var(--mint)',
   },
   {
     name: 'Interview Prep',
-    tagline: 'Frontend interview practice with English speaking practice.',
+    tagline: '327 frontend interview questions with a built-in code runner and study plan.',
+    aiFeature: 'Practice with an AI interviewer that asks follow-ups, probes edge cases, and gives real feedback.',
     href: 'https://i.trile.site',
     image: '/art/interview-prep.jpg',
     accent: 'var(--cobalt)',
@@ -54,9 +58,10 @@ function SparklesIcon() {
   )
 }
 
-function ArrowUpRightIcon() {
+function ArrowUpRightIcon({ className }: { className?: string }) {
   return (
     <svg
+      className={className}
       width="20"
       height="20"
       viewBox="0 0 24 24"
@@ -140,10 +145,10 @@ function App() {
             <div className="card-art">
               <img
                 src={app.image}
-                alt={`Playful sculptural artwork representing ${app.name}`}
+                alt={`Screenshot of the ${app.name} app`}
                 loading="eager"
-                width={1408}
-                height={1008}
+                width={1328}
+                height={896}
               />
               <div className="image-sheen" aria-hidden="true" />
               <span className="card-number">{String(i + 1).padStart(2, '0')}</span>
@@ -151,7 +156,10 @@ function App() {
             <div className="card-copy">
               <h2>{app.name}</h2>
               <p>{app.tagline}</p>
-              <ArrowUpRightIcon />
+              <p className="card-ai">
+                <SparklesIcon /> {app.aiFeature}
+              </p>
+              <ArrowUpRightIcon className="card-arrow" />
             </div>
           </a>
         ))}
