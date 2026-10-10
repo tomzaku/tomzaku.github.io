@@ -35,6 +35,14 @@ const APPS: AppLink[] = [
     image: '/art/interview-prep.jpg',
     accent: 'var(--cobalt)',
   },
+  {
+    name: 'Keyflow',
+    tagline: 'Learn piano with falling notes, from your first key to Für Elise, in stunning themes like fire and candy.',
+    aiFeature: 'A smart hand guide reads the fingering and shows which finger to use, and when and how far to move.',
+    href: 'https://m.trile.site',
+    image: '/art/keyflow.jpg',
+    accent: 'var(--amber)',
+  },
 ]
 
 function SparklesIcon() {
@@ -167,7 +175,7 @@ function App() {
 
       <footer className="one-page-footer">
         <span>Frontend &middot; Product &middot; Play</span>
-        <span>Three ideas, always evolving.</span>
+        <span>Four ideas, always evolving.</span>
       </footer>
     </main>
   )

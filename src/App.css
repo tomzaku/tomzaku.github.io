@@ -10,6 +10,7 @@
   --coral: oklch(67% 0.2 35);
   --mint: oklch(80% 0.14 158);
   --cobalt: oklch(55% 0.2 260);
+  --amber: oklch(76% 0.16 60);
   --font-display: 'Syne', sans-serif;
   --font-sans: 'DM Sans', sans-serif;
   --pointer-x: 50%;
@@ -233,7 +234,7 @@ a {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: clamp(0.65rem, 1.5vw, 1.4rem);
   min-height: 0;
 }
@@ -269,6 +270,10 @@ a {
 
 .project-card:nth-child(3) {
   transition-delay: 1.71s;
+}
+
+.project-card:nth-child(4) {
+  transition-delay: 1.84s;
 }
 
 .project-card:hover,
@@ -386,7 +391,7 @@ a {
   text-transform: uppercase;
   font-size: 0.62rem;
   opacity: 0;
-  transition: opacity 0.5s 1.9s;
+  transition: opacity 0.5s 2s;
 }
 
 .is-loaded .one-page-footer {
